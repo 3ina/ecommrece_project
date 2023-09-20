@@ -3,6 +3,8 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255)
+    image = models.ImageField(upload_to='category/', default='images/default.png',null=True)
+
 
     class Meta:
         verbose_name_plural = 'categories'
