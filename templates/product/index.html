@@ -93,7 +93,7 @@
                   </figure>
                   <div class="block-4-text p-4">
                     <h3><a href="#">{{ product.category }}</a></h3>
-                    <p class="mb-0">{{ product.name }}</p>
+                    <p class="mb-0"><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></p>
                     <p class="text-primary font-weight-bold">${{ product.price }}</p>
                   </div>
                 </div>
