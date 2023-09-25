@@ -71,31 +71,28 @@
             <li class="has-children active">
               <a href="{% url 'index' %}">Home</a>
               <ul class="dropdown">
-                <li><a href="#">Menu One</a></li>
-                <li><a href="#">Menu Two</a></li>
-                <li><a href="#">Menu Three</a></li>
-                <li class="has-children">
+                  <li><a href="{% url 'product:shop' %}">Shop</a></li>
+                  <li><a href="{% url 'product:categories' %}">Categories</a></li>
+                <!--<li class="has-children">
                   <a href="#">Sub Menu</a>
                   <ul class="dropdown">
                     <li><a href="#">Menu One</a></li>
                     <li><a href="#">Menu Two</a></li>
                     <li><a href="#">Menu Three</a></li>
                   </ul>
-                </li>
+                </li>-->
               </ul>
             </li>
-            <li class="has-children">
-              <a href="about.html">About</a>
-              <ul class="dropdown">
+            <li class=>
+              <a href="{% url 'about' %}">About</a>
+              <!--<ul class="dropdown">
                 <li><a href="#">Menu One</a></li>
                 <li><a href="#">Menu Two</a></li>
                 <li><a href="#">Menu Three</a></li>
-              </ul>
+              </ul>-->
             </li>
-            <li><a href="{% url 'product:shop' %}">Shop</a></li>
-            <li><a href="#">Catalogue</a></li>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="{% url 'send-email'%}">Contact</a></li>
                {% if user.is_authenticated %}
                    <li><a href="{% url 'account_logout' %}">Log Out</a></li>
                {% else %}
