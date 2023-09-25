@@ -45,7 +45,11 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="#"><span class="icon icon-person"></span></a></li>
+                    {% if user.is_authenticated %}
+                         <li><a href=""><span class="icon icon-person"></span></a></li>
+
+                    {% endif %}
+
                   <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                   <li>
                     <a href="cart.html" class="site-cart">
@@ -88,10 +92,16 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
-            <li><a href="shop.html">Shop</a></li>
+            <li><a href="{% url 'product:shop' %}">Shop</a></li>
             <li><a href="#">Catalogue</a></li>
             <li><a href="#">New Arrivals</a></li>
             <li><a href="contact.html">Contact</a></li>
+               {% if user.is_authenticated %}
+                   <li><a href="{% url 'account_logout' %}">Log Out</a></li>
+               {% else %}
+                    <li><a href="{% url 'account_login' %}">Log In</a></li>
+                    <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+               {% endif %}
           </ul>
         </div>
       </nav>

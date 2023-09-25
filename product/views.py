@@ -22,3 +22,12 @@ def detail(request,slug):
     return  render(request,"product/detail.html",context)
 
 
+def shop(request,):
+    products = Product.objects.all()
+
+
+    context = {
+        "products" : products
+    }
+    return render(request,'product/shop.html',context)
+
