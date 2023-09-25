@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'product',
+    'accounts',
+    'auth_style',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -40,8 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product',
-    'accounts',
+
 ]
 
 MIDDLEWARE = [
