@@ -75,4 +75,4 @@ def send_email(request):
 
 def about(request):
 
-    render(request,'product/about.html')
+    return render(request,'product/about.html')
