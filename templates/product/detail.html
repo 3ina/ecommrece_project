@@ -21,6 +21,7 @@
             <h2 class="text-black">{{ product.name }}t</h2>
             <p> {{ product.description }}</p>
             <p><strong class="text-primary h4">${{ product.price }}</strong></p>
+              <p><strong class="text-primary h4">Quantity : {{ product.quantity }}</strong></p>
             <div class="mb-1 d-flex">
               <label for="option-sm" class="d-flex mr-3 mb-3">
                 <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
@@ -47,7 +48,11 @@
             </div>
 
             </div>
-            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+              {% if user.is_authenticated and product.quantity != 0 %}
+                  <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+              {% endif %}
+
+
 
           </div>
         </div>

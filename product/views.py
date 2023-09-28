@@ -4,6 +4,8 @@ from django.shortcuts import render ,get_object_or_404
 from product.models import Product,Category
 from django.views import generic
 from product.forms import Contact
+from django.views.decorators.http import require_GET
+from cart.forms import AddToCartForm
 
 def index(request):
     products = Product.objects.all()
@@ -15,12 +17,15 @@ def index(request):
     return render(request,'product/index.html',context)
 
 
+@require_GET
 def detail(request,slug):
     product = get_object_or_404(Product,slug=slug)
     products = Product.objects.filter(category=product.category)
+    form = AddToCartForm()
     context = {
         "product" : product,
-        "products" : products
+        "products" : products,
+        "form" : form
     }
     return  render(request,"product/detail.html",context)
 
