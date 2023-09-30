@@ -25,6 +25,14 @@ class Cart:
             self.cart[product_id]['quantity'] += quantity
         self.save()
 
+
+    def product_exists(self,product):
+        product_id = str(product.id)
+        if product_id in self.cart:
+            return True
+        else:
+            return False
+
     def save(self):
         self.session.modified = True
 
