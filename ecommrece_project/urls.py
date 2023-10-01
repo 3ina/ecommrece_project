@@ -11,6 +11,7 @@ urlpatterns = [
     path('contact/',send_email,name="send-email"),
     path('products/',include('product.urls',namespace="product")),
     path('accounts/',include('allauth.urls')),
+    path('accounts/',include('accounts.urls')),
     path('cart/',include('cart.urls')),
     path('', index, name="index"),
 
